@@ -12,7 +12,7 @@ spec:
       hostNetwork: true
       containers:
       - name: alto-inspect
-        image: gcr.io/narayan-gcp-project/alto-inspect:731636e4cd98
+        image: djspears/panw:alto-inspect
         env:
         - name: PYTHONPATH
           value: "/usr/local/lib/python2.7" 
