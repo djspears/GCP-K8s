@@ -1,6 +1,6 @@
 # GCP-K8s
 
-The lab guide and attached files have been created to leverage terraform to deploy the following environment with GCP:
+The lab guide and attached files have been created to leverage terraform to deploy the following environment in GCP:
 
 ```
 1.  VPC Network with Trust, Untrust, and MGMT subnet
