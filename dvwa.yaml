@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  annotations:
+    cloud.google.com/load-balancer-type: "Internal"
+  labels:
+    app: dvwa
+    tier: frontend
+spec:
+  # if your cluster supports it, uncomment the following to automatically create
+  # an external load-balanced IP for the frontend service.
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: dvwa
+    tier: frontend
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: dvwa
+        tier: frontend
+    spec:
+      containers:
+      - name: php-redis
+        image: mirror.gcr.io/vulnerables/web-dvwa
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        env:
+        - name: GET_HOSTS_FROM
+          value: dns
+          # If your cluster config does not include a dns service, then to
+          # instead access environment variables to find service host
+          # info, comment out the 'value: dns' line above, and uncomment the
+          # line below:
+          # value: env
+        ports:
+        - containerPort: 80
