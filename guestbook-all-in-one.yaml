@@ -129,6 +129,8 @@ spec:
           requests:
             cpu: 100m
             memory: 100Mi
+      nodeSelector:
+        tier: frontend
         env:
         - name: GET_HOSTS_FROM
           value: dns
@@ -139,5 +141,3 @@ spec:
           # value: env
         ports:
         - containerPort: 80
-        nodeSelector:
-          tier: frontend
