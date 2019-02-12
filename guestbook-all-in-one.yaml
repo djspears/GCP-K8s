@@ -38,6 +38,8 @@ spec:
             memory: 100Mi
         ports:
         - containerPort: 6379
+        nodeSelector:
+          tier: backend
 ---
 apiVersion: v1
 kind: Service
@@ -86,6 +88,8 @@ spec:
           # value: env
         ports:
         - containerPort: 6379
+        nodeSelector:
+          tier: backend
 ---
 apiVersion: v1
 kind: Service
@@ -135,3 +139,5 @@ spec:
           # value: env
         ports:
         - containerPort: 80
+        nodeSelector:
+          tier: backend
