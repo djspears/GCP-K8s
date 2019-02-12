@@ -129,8 +129,8 @@ spec:
           requests:
             cpu: 100m
             memory: 100Mi
-      nodeSelector:
-        tier: frontend
+        nodeSelector:
+          tier: frontend
         env:
         - name: GET_HOSTS_FROM
           value: dns
