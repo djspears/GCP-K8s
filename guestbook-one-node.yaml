@@ -140,4 +140,4 @@ spec:
         ports:
         - containerPort: 80
       nodeSelector:
-          tier: frontend
+          tier: backend
