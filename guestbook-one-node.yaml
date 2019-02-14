@@ -140,4 +140,4 @@ spec:
         ports:
         - containerPort: 80
       nodeSelector:
-          pool: default-pool
+          pool: web-pool
