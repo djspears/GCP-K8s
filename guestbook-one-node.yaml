@@ -63,7 +63,7 @@ kind: Deployment
 metadata:
   name: redis-slave
 spec:
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
@@ -115,7 +115,7 @@ kind: Deployment
 metadata:
   name: frontend
 spec:
-  replicas: 1
+  replicas: 4
   template:
     metadata:
       labels:
