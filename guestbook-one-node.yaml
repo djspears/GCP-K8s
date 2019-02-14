@@ -39,7 +39,7 @@ spec:
         ports:
         - containerPort: 6379
       nodeSelector:
-        tier: backend
+        tier: db-tier
 ---
 apiVersion: v1
 kind: Service
@@ -89,7 +89,7 @@ spec:
         ports:
         - containerPort: 6379
       nodeSelector:
-        tier: backend
+        tier: db-tier
 ---
 apiVersion: v1
 kind: Service
@@ -140,4 +140,4 @@ spec:
         ports:
         - containerPort: 80
       nodeSelector:
-          tier: backend
+          tier: web-tier
